@@ -5,9 +5,9 @@ export class InternationalStudent extends Student {
 
     nationality: string;
 
-    constructor(nationality: string, firstname: string, lastname: string)
+    constructor(nationality: string, firstname: string, lastname: string, studentnumber: number, mobilenumber: number)
     {
-        super(firstname, lastname);
+        super(firstname, lastname,studentnumber, mobilenumber);
         this.nationality = nationality;
     }
 

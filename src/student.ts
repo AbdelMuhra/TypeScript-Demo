@@ -5,10 +5,12 @@ export class Student implements IStudent{
     firstname: string;
     lastname: string;
 
-    constructor(firstname: string, lastname:string)
+    constructor(firstname: string, lastname:string, studentnumber:number, mobilenumber:number)
     {
         this.firstname = firstname;
         this.lastname = lastname;
+        this.studentNumber = studentnumber;
+        this.mobileNumber = mobilenumber;
     }
     studentNumber: number;
     mobileNumber: number;
@@ -18,6 +20,12 @@ export class Student implements IStudent{
 
     GetFullName():string{
         return `Student: ${this.firstname} ${this.lastname}`;
+    }
+    GetStudentNum():string{
+        return `Student Number: ${this.studentNumber}`
+    }
+    GetMobileNum():string{
+        return `Mobile Number: ${this.mobileNumber}`
     }
 }
 

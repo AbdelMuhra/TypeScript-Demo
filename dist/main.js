@@ -15,8 +15,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _student__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./student */ "./src/student.ts");
 
 class InternationalStudent extends _student__WEBPACK_IMPORTED_MODULE_0__.Student {
-    constructor(nationality, firstname, lastname) {
-        super(firstname, lastname);
+    constructor(nationality, firstname, lastname, studentnumber, mobilenumber) {
+        super(firstname, lastname, studentnumber, mobilenumber);
         this.nationality = nationality;
     }
     GetNationality() {
@@ -38,15 +38,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Student": () => (/* binding */ Student)
 /* harmony export */ });
 class Student {
-    constructor(firstname, lastname) {
+    constructor(firstname, lastname, studentnumber, mobilenumber) {
         this.firstname = firstname;
         this.lastname = lastname;
+        this.studentNumber = studentnumber;
+        this.mobileNumber = mobilenumber;
     }
     getAccountStatus(studentNumber) {
         throw new Error("Method not implemented.");
     }
     GetFullName() {
         return `Student: ${this.firstname} ${this.lastname}`;
+    }
+    GetStudentNum() {
+        return `Student Number: ${this.studentNumber}`;
+    }
+    GetMobileNum() {
+        return `Mobile Number: ${this.mobileNumber}`;
     }
 }
 // let student = new Student("Peter", "Parker");
@@ -122,9 +130,10 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _internationalStudent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./internationalStudent */ "./src/internationalStudent.ts");
 
-let internationalStudent = new _internationalStudent__WEBPACK_IMPORTED_MODULE_0__.InternationalStudent("Brazilian", "Neymar", "Santos");
+let internationalStudent = new _internationalStudent__WEBPACK_IMPORTED_MODULE_0__.InternationalStudent("Brazilian", "Neymar", "Santos", 10, 123456789);
 let divText = document.querySelector('div');
-divText.textContent = internationalStudent.GetFullName() + " " + internationalStudent.GetNationality();
+divText.textContent = internationalStudent.GetFullName() + " " + internationalStudent.GetNationality() +
+    "\n" + internationalStudent.GetStudentNum() + " " + internationalStudent.GetMobileNum();
 function displayAlert() {
     return alert('cool!');
 }
